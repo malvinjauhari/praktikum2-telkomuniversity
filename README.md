@@ -17,7 +17,7 @@ Program meminta input jumlah mahasiswa, menerima nilai setiap mahasiswa dengan m
 
 ### 1. Ketentuan Input & Validasi Data
 - **Jumlah Mahasiswa**: Menerima input integer positif.
-- **Validasi Nilai**: Nilai harus berada dalam rentang **0 hingga 100**. Jika pengguna memasukkan nilai $< 0$ atau $> 100$, program akan menampilkan peringatan dan meminta input ulang hingga nilai valid (*looping while*).
+- **Validasi Nilai**: Nilai harus berada dalam rentang **0 hingga 100**. Jika pengguna memasukkan nilai `< 0` atau `> 100`, program akan menampilkan peringatan dan meminta input ulang hingga nilai valid (*looping while*).
 
 ### 2. Kategori Kelulusan (Percabangan Bertingkat)
 Setiap nilai mahasiswa diklasifikasikan ke dalam kategori berikut:
@@ -27,11 +27,11 @@ Setiap nilai mahasiswa diklasifikasikan ke dalam kategori berikut:
 | **85 – 100** | Lulus dengan nilai bagus (*Lulus Sangat Baik*) | Lulus | `lulus += 1` |
 | **60 – 84** | Lulus dengan nilai cukup (*Lulus*) | Lulus | `lulus += 1` |
 | **40 – 59** | Remedial | Remedial | `remedial += 1` |
-| **$<$ 40** | Tidak Lulus | Tidak Lulus | `tidak_lulus += 1` |
+| **< 40** | Tidak Lulus | Tidak Lulus | `tidak_lulus += 1` |
 
 ### 3. Rekapitulasi Akhir Kelas
 Setelah seluruh data mahasiswa dimasukkan, program menampilkan rekap:
-- **Rata-rata Nilai Kelas** ($\text{total} / \text{jumlah\_mahasiswa}$)
+- **Rata-rata Nilai Kelas** (`total / jumlah_mahasiswa`)
 - **Nilai Tertinggi**
 - **Jumlah Mahasiswa Lulus**
 - **Jumlah Mahasiswa Remedial**
@@ -141,12 +141,12 @@ print("Tidak Lulus:", tidak_lulus)
 3. **Validasi Input dengan `while`**:
    - Memeriksa kondisi `while nilai < 0 or nilai > 100`. Program tidak akan melanjutkan ke tahap berikutnya sebelum pengguna memasukkan angka yang berada dalam rentang 0 hingga 100.
 4. **Percabangan Bertingkat (*Nested if-else*)**:
-   - Tingkat pertama memisahkan antara nilai kelulusan ($\ge 60$) dan nilai belum lulus ($< 60$).
+   - Tingkat pertama memisahkan antara nilai kelulusan (&ge; 60) dan nilai belum lulus (< 60).
    - Tingkat kedua membagi lagi masing-masing kategori menjadi:
-     - $\ge 85$: Nilai bagus (*Lulus*)
-     - $< 85$: Nilai cukup (*Lulus*)
-     - $\ge 40$: *Remedial*
-     - $< 40$: *Tidak Lulus*
+     - &ge; 85: Nilai bagus (*Lulus*)
+     - < 85: Nilai cukup (*Lulus*)
+     - &ge; 40: *Remedial*
+     - < 40: *Tidak Lulus*
 5. **Pencarian Nilai Tertinggi & Akumulasi**:
    - `if nilai > tertinggi: tertinggi = nilai` memperbarui rekor nilai tertinggi yang ditemukan.
    - `total += nilai` menjumlahkan seluruh nilai untuk perhitungan rata-rata.
@@ -198,8 +198,8 @@ print("Tidak Lulus:", tidak_lulus)
 ### Kasus 2: Pengujian Validasi Nilai di Luar Rentang
 - **Input Data:**
   - Jumlah mahasiswa: `1`
-  - Input pertama: `120` (Tidak valid $> 100$)
-  - Input kedua: `-10` (Tidak valid $< 0$)
+  - Input pertama: `120` (Tidak valid `> 100`)
+  - Input kedua: `-10` (Tidak valid `< 0`)
   - Input ketiga: `88` (Valid)
 - **Output Terminal:**
   ```text
